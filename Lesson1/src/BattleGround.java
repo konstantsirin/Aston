@@ -19,6 +19,10 @@ public class BattleGround {
         zombieArray.add(new Zombie(100));
         zombieArray.add(new Zombie(100));
         zombieArray.add(new Zombie(100));
+        zombieArray.add(new Zombie(100));
+        zombieArray.add(new Zombie(100));
+        zombieArray.add(new Zombie(100));
+        zombieArray.add(new Zombie(100));
 
         Warrior warrior = new Warrior("Петрушка", 100);
         Mage mage = new Mage("Магушка", 100);
@@ -26,6 +30,9 @@ public class BattleGround {
 
         for (Zombie zombie: zombieArray) {
             while (zombie.isAlive()) {
+
+                if (!warrior.isAlive() && !mage.isAlive() && !archer.isAlive()) return;
+
                 if (warrior.isAlive()) {
                     zombie.attackHero(warrior);
                 } else if (mage.isAlive()) {
@@ -33,9 +40,9 @@ public class BattleGround {
                 } else if (archer.isAlive()) {
                     zombie.attackHero(archer);
                 }
-                warrior.attackEnemy(zombie);
-                mage.attackEnemy(zombie);
-                archer.attackEnemy(zombie);
+                if (warrior.isAlive()) warrior.attackEnemy(zombie);
+                if (mage.isAlive()) mage.attackEnemy(zombie);
+                if (archer.isAlive()) archer.attackEnemy(zombie);
             }
         }
 
