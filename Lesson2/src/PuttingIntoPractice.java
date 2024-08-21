@@ -23,7 +23,7 @@ public class PuttingIntoPractice {
                 new Transaction(alan, 2012, 950)
         );
 
-        System.out.println("1. Íàéòè âñå òðàíçàêöèè çà 2011 ãîä è îòñîðòèðîâàòü èõ ïî ñóììå (îò ìåíüøåé ê áîëüøåé)");
+        System.out.println("1. ÐÐ°Ð¹Ñ‚Ð¸ Ð²ÑÐµ Ñ‚Ñ€Ð°Ð½Ð·Ð°ÐºÑ†Ð¸Ð¸ Ð·Ð° 2011 Ð³Ð¾Ð´ Ð¸ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ñ… Ð¿Ð¾ ÑÑƒÐ¼Ð¼Ðµ (Ð¾Ñ‚ Ð¼ÐµÐ½ÑŒÑˆÐµÐ¹ Ðº Ð±Ð¾Ð»ÑŒÑˆÐµÐ¹)");
         transactions.stream()
                 .filter(t -> t.getYear() == 2011)
                 .sorted(new Comparator<Transaction>() {
@@ -35,14 +35,14 @@ public class PuttingIntoPractice {
                 .forEach(System.out::println);
         System.out.println();
 
-        System.out.println("2. Âûâåñòè ñïèñîê íåïîâòîðÿþùèõñÿ ãîðîäîâ, â êîòîðûõ ðàáîòàþò òðåéäåðû.");
+        System.out.println("2. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÐ¿Ð¸ÑÐ¾Ðº Ð½ÐµÐ¿Ð¾Ð²Ñ‚Ð¾Ñ€ÑÑŽÑ‰Ð¸Ñ…ÑÑ Ð³Ð¾Ñ€Ð¾Ð´Ð¾Ð², Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÑŽÑ‚ Ñ‚Ñ€ÐµÐ¹Ð´ÐµÑ€Ñ‹.");
         transactions.stream()
                 .map(t -> t.getTrader().getCity())
                 .distinct()
                 .forEach(System.out::println);
         System.out.println();
 
-        System.out.println("3. Íàéòè âñåõ òðåéäåðîâ èç Êåìáðèäæà è îòñîðòèðîâàòü èõ ïî èìåíàì.");
+        System.out.println("3. ÐÐ°Ð¹Ñ‚Ð¸ Ð²ÑÐµÑ… Ñ‚Ñ€ÐµÐ¹Ð´ÐµÑ€Ð¾Ð² Ð¸Ð· ÐšÐµÐ¼Ð±Ñ€Ð¸Ð´Ð¶Ð° Ð¸ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ñ… Ð¿Ð¾ Ð¸Ð¼ÐµÐ½Ð°Ð¼.");
         transactions.stream()
                 .filter(t -> t.getTrader().getCity().equals("Cambridge"))
                 .map(t -> t.getTrader().getName())
@@ -51,7 +51,7 @@ public class PuttingIntoPractice {
                 .forEach(System.out::println);
         System.out.println();
 
-        System.out.println("4. Âåðíóòü ñòðîêó ñî âñåìè èìåíàìè òðåéäåðîâ, îòñîðòèðîâàííûìè â àëôàâèòíîì ïîðÿäêå.");
+        System.out.println("4. Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒ ÑÑ‚Ñ€Ð¾ÐºÑƒ ÑÐ¾ Ð²ÑÐµÐ¼Ð¸ Ð¸Ð¼ÐµÐ½Ð°Ð¼Ð¸ Ñ‚Ñ€ÐµÐ¹Ð´ÐµÑ€Ð¾Ð², Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¼Ð¸ Ð² Ð°Ð»Ñ„Ð°Ð²Ð¸Ñ‚Ð½Ð¾Ð¼ Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ.");
         String resultAllTraders = transactions.stream()
                 .map(t -> t.getTrader().getName())
                 .distinct()
@@ -60,21 +60,21 @@ public class PuttingIntoPractice {
         System.out.println(resultAllTraders);
         System.out.println();
 
-        System.out.println("5. Âûÿñíèòü, ñóùåñòâóåò ëè õîòü îäèí òðåéäåð èç Ìèëàíà.");
+        System.out.println("5. Ð’Ñ‹ÑÑÐ½Ð¸Ñ‚ÑŒ, ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ Ð»Ð¸ Ñ…Ð¾Ñ‚ÑŒ Ð¾Ð´Ð¸Ð½ Ñ‚Ñ€ÐµÐ¹Ð´ÐµÑ€ Ð¸Ð· ÐœÐ¸Ð»Ð°Ð½Ð°.");
         boolean hasPersonFromMilan = transactions.stream()
                 .map(t -> t.getTrader().getCity())
                 .anyMatch(c -> c.equals("Milan"));
-        System.out.println(hasPersonFromMilan ? "Äà" : "Íåò");
+        System.out.println(hasPersonFromMilan ? "Ð”Ð°" : "ÐÐµÑ‚");
         System.out.println();
 
-        System.out.println("6. Âûâåñòè ñóììû âñåõ òðàíçàêöèé òðåéäåðîâ èç Êåìáðèäæà.");
+        System.out.println("6. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÑƒÐ¼Ð¼Ñ‹ Ð²ÑÐµÑ… Ñ‚Ñ€Ð°Ð½Ð·Ð°ÐºÑ†Ð¸Ð¹ Ñ‚Ñ€ÐµÐ¹Ð´ÐµÑ€Ð¾Ð² Ð¸Ð· ÐšÐµÐ¼Ð±Ñ€Ð¸Ð´Ð¶Ð°.");
         transactions.stream()
                 .filter(t -> t.getTrader().getCity().equals("Cambridge"))
                 .map(t -> t.getValue())
                 .forEach(System.out::println);
         System.out.println();
 
-        System.out.println("7. Êàêîâà ìàêñèìàëüíàÿ ñóììà ñðåäè âñåõ òðàíçàêöèé?");
+        System.out.println("7. ÐšÐ°ÐºÐ¾Ð²Ð° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð°Ñ ÑÑƒÐ¼Ð¼Ð° ÑÑ€ÐµÐ´Ð¸ Ð²ÑÐµÑ… Ñ‚Ñ€Ð°Ð½Ð·Ð°ÐºÑ†Ð¸Ð¹?");
         Integer max = transactions.stream()
                 .mapToInt(t -> t.getValue())
                 .max()
@@ -82,7 +82,7 @@ public class PuttingIntoPractice {
         System.out.println(max);
         System.out.println();
 
-        System.out.println("8. Íàéòè òðàíçàêöèþ ñ ìèíèìàëüíîé ñóììîé.");
+        System.out.println("8. ÐÐ°Ð¹Ñ‚Ð¸ Ñ‚Ñ€Ð°Ð½Ð·Ð°ÐºÑ†Ð¸ÑŽ Ñ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¹ ÑÑƒÐ¼Ð¼Ð¾Ð¹.");
         Integer min = transactions.stream()
                 .mapToInt(t -> t.getValue())
                 .min()
