@@ -80,6 +80,13 @@ public class PuttingIntoPractice {
                 .max()
                 .getAsInt();
         System.out.println(max);
+
+        // без сохранения в переменную
+        transactions.stream()
+                .mapToInt(t -> t.getValue())
+                .max()
+                .ifPresent(System.out::println);
+
         System.out.println();
 
         System.out.println("8. Найти транзакцию с минимальной суммой.");
@@ -88,6 +95,13 @@ public class PuttingIntoPractice {
                 .min()
                 .getAsInt();
         System.out.println(min);
+
+        // без сохранения в переменную
+        transactions.stream()
+                .mapToInt(t -> t.getValue())
+                .min()
+                .ifPresent(System.out::println);
+
         System.out.println();
     }
 }
