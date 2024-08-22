@@ -7,17 +7,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         MyArrayList<String> myArrayList = new MyArrayList<>();
-        myArrayList.add("Слово1");
-        myArrayList.add("Слово2");
-        myArrayList.add("Слово3");
+        myArrayList.add("РЎР»РѕРІРѕ1");
+        myArrayList.add("РЎР»РѕРІРѕ2");
+        myArrayList.add("РЎР»РѕРІРѕ3");
         System.out.println(myArrayList);
         myArrayList.get(3);
         System.out.println(myArrayList.get(1));
         myArrayList.remove(0);
         System.out.println(myArrayList);
-        ArrayList<String> arrayList = new ArrayList<>(List.of("Слово из другой коллекции 1",
-                "Слово из другой коллекции 2",
-                "Слово из другой коллекции 3"));
+        ArrayList<String> arrayList = new ArrayList<>(List.of("РЎР»РѕРІРѕ РёР· РґСЂСѓРіРѕР№ РєРѕР»Р»РµРєС†РёРё 1",
+                "РЎР»РѕРІРѕ РёР· РґСЂСѓРіРѕР№ РєРѕР»Р»РµРєС†РёРё 2",
+                "РЎР»РѕРІРѕ РёР· РґСЂСѓРіРѕР№ РєРѕР»Р»РµРєС†РёРё 3"));
         myArrayList.addAll(arrayList);
         System.out.println(myArrayList);
 
