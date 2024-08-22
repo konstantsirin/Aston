@@ -29,7 +29,7 @@ public class MyArrayList<T> {
 
     public T get(int index) {
         if (index < 0 || index >= size) {
-            System.out.println("Запрашиваемого элемента не существует");
+            System.out.println("Р—Р°РїСЂР°С€РёРІР°РµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚");
             return null;
         }
         return (T) elements[index];
@@ -37,7 +37,7 @@ public class MyArrayList<T> {
 
     public void remove(int index) {
         if (index < 0 || index >= size) {
-            System.out.println("Запрашиваемого элемента не существует");
+            System.out.println("Р—Р°РїСЂР°С€РёРІР°РµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚");
             return;
         }
         System.arraycopy(elements, index + 1, elements, index, size - index - 1);
