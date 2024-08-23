@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class MyArrayList<T> {
-    private final int DEFAULT_SIZE = 10;
+    private static final int DEFAULT_SIZE = 10;
     private Object[] elements;
     private int size = 0;
 
@@ -17,7 +17,6 @@ public class MyArrayList<T> {
         for (T element : collection) {
             this.add(element);
         }
-
     }
 
     public void add(T item) {
@@ -28,20 +27,24 @@ public class MyArrayList<T> {
     }
 
     public T get(int index) {
-        if (index < 0 || index >= size) {
-            System.out.println("Запрашиваемого элемента не существует");
+        if (checkIndexNotWithin(index)) {
             return null;
         }
         return (T) elements[index];
     }
 
     public void remove(int index) {
-        if (index < 0 || index >= size) {
-            System.out.println("Запрашиваемого элемента не существует");
+        if (checkIndexNotWithin(index)) {
             return;
         }
         System.arraycopy(elements, index + 1, elements, index, size - index - 1);
         elements[--size] = null;
+    }
+
+    private boolean checkIndexNotWithin(int index) {
+        boolean flag = index < 0 || index >= size;
+        if (flag) System.out.println("Запрашиваемого элемента не существует");
+        return flag;
     }
 
     public void addAll(Collection<? extends T> collection) {
@@ -52,13 +55,13 @@ public class MyArrayList<T> {
         }
     }
 
-    public static <T extends Comparable<T>> Object[] bubbleSort(Collection<T> collection) {
+    public static <E extends Comparable<E>> Object[] bubbleSort(Collection<E> collection) {
         Object[] array = collection.toArray();
         boolean filteredCompleted;
         do {
             filteredCompleted = true;
             for (int i = 1; i < array.length; i++) {
-                if (((T) array[i - 1]).compareTo((T) array[i]) > 0) {
+                if (((E) array[i - 1]).compareTo((E) array[i]) > 0) {
                     Object temp = array[i - 1];
                     array[i - 1] = array[i];
                     array[i] = temp;

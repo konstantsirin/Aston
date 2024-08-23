@@ -68,22 +68,23 @@ public class PuttingIntoPractice {
         System.out.println();
 
         System.out.println("6. Вывести суммы всех транзакций трейдеров из Кембриджа.");
-        transactions.stream()
+        int sum = transactions.stream()
                 .filter(t -> t.getTrader().getCity().equals("Cambridge"))
-                .map(t -> t.getValue())
-                .forEach(System.out::println);
+                .mapToInt(Transaction::getValue)
+                .sum();
+        System.out.println(sum);
         System.out.println();
 
         System.out.println("7. Какова максимальная сумма среди всех транзакций?");
         Integer max = transactions.stream()
-                .mapToInt(t -> t.getValue())
+                .mapToInt(Transaction::getValue)
                 .max()
                 .getAsInt();
         System.out.println(max);
 
         // без сохранения в переменную
         transactions.stream()
-                .mapToInt(t -> t.getValue())
+                .mapToInt(Transaction::getValue)
                 .max()
                 .ifPresent(System.out::println);
 
@@ -91,14 +92,14 @@ public class PuttingIntoPractice {
 
         System.out.println("8. Найти транзакцию с минимальной суммой.");
         Integer min = transactions.stream()
-                .mapToInt(t -> t.getValue())
+                .mapToInt(Transaction::getValue)
                 .min()
                 .getAsInt();
         System.out.println(min);
 
         // без сохранения в переменную
         transactions.stream()
-                .mapToInt(t -> t.getValue())
+                .mapToInt(Transaction::getValue)
                 .min()
                 .ifPresent(System.out::println);
 
